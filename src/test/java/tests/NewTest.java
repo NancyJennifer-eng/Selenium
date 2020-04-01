@@ -12,6 +12,8 @@ import org.testng.annotations.AfterMethod;
 
 public class NewTest {
 	public   WebDriver driver;
+	
+	
   @Test
   public void f() {
 	  
