@@ -32,10 +32,9 @@ public class NewTest {
 		 driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		 driver.get("http://www.facebook.com/");
 		 driver.manage().window().maximize();
-	 
-	  
-  }
+	 }
 
+  
   @AfterMethod
   public void afterMethod() {
 	  driver.quit();
