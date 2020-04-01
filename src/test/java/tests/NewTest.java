@@ -24,6 +24,7 @@ public class NewTest {
 	   System.out.println(" Login Successfully, now it is the time to Log Off buddy.");
 	   
   }
+  
   @BeforeMethod
   public void beforeMethod() {
 	  System.setProperty("webdriver.chrome.driver", "C:\\chrome\\chromedriver.exe");
