@@ -37,7 +37,7 @@ public class NewTest {
   
   @AfterMethod
   public void afterMethod() {
-	  driver.quit();
+	  driver.close();
   }
 
 }
