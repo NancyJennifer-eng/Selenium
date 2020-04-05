@@ -11,12 +11,20 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 
 public class NewTest {
-	public   WebDriver driver;
+	public   WebDriver driver=null;
 	
-	
-  @Test
+	@BeforeMethod
+	  public void beforeMethod() {
+		  System.setProperty("webdriver.chrome.driver", "C:\\chrome\\chromedriver.exe");
+			 driver =new ChromeDriver();
+			 driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			 driver.get("http://www.facebook.com/");
+			 driver.manage().window().maximize();
+		 }	
+  
+@Test
   public void f() {
-	  
+	    
 	   driver.findElement(By.xpath("//input[@type='email'][@name='email']")).sendKeys("Nancy@gmail.com");
 	   driver.findElement(By.xpath("//input[@type='password'][@name='pass']")).sendKeys("jennifer");
 	   driver.findElement(By.xpath("//input[@type='submit']")).click();
@@ -25,14 +33,7 @@ public class NewTest {
 	   
   }
   
-  @BeforeMethod
-  public void beforeMethod() {
-	  System.setProperty("webdriver.chrome.driver", "C:\\chrome\\chromedriver.exe");
-		 driver =new ChromeDriver();
-		 driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		 driver.get("http://www.facebook.com/");
-		 driver.manage().window().maximize();
-	 }
+  
 
   
   @AfterMethod
